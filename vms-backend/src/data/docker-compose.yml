@@ -1,0 +1,13 @@
+services:
+  db:
+    image: mysql:latest
+    env_file:
+      - docker.env
+    ports:
+      - 8644:3306
+    volumes:
+      - vmsdb:/var/lib/mysql
+      - "./initTables.sql:/docker-entrypoint-initdb.d/1.sql"
+volumes:
+  vmsdb:
+    driver: local

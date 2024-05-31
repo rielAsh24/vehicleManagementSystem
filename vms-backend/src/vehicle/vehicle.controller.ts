@@ -1,4 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UploadedFiles,
+  UseInterceptors,
+} from '@nestjs/common';
+import { AnyFilesInterceptor } from '@nestjs/platform-express';
+
 import { VehicleService } from './vehicle.service';
 import { CreateVehicleDto } from './dto/create-vehicle.dto';
 import { UpdateVehicleDto } from './dto/update-vehicle.dto';
@@ -8,8 +20,20 @@ export class VehicleController {
   constructor(private readonly vehicleService: VehicleService) {}
 
   @Post()
-  create(@Body() createVehicleDto: CreateVehicleDto) {
-    return this.vehicleService.create(createVehicleDto);
+  @UseInterceptors(AnyFilesInterceptor())
+  create(
+    @Body() createVehicleDto: CreateVehicleDto,
+    @UploadedFiles()
+    files: Array<Express.Multer.File>,
+  ) {
+    const { vehicleNumber, vehicleType } = createVehicleDto;
+    const [puc, insurance] = files.map((f) => f.buffer);
+    return this.vehicleService.createVehicle({
+      vehicleNumber,
+      vehicleType,
+      puc,
+      insurance,
+    });
   }
 
   @Get()

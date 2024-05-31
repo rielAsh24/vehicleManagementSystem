@@ -13,12 +13,17 @@ export class VehicleService {
     private VehicleRepository: Repository<Vehicles>,
   ) {}
 
-  create(createVehicleDto: CreateVehicleDto) {
+  createVehicle(createVehicleDto: CreateVehicleDto) {
     return this.VehicleRepository.insert(createVehicleDto);
   }
 
   findAll() {
-    return this.VehicleRepository.find();
+    return this.VehicleRepository.find({
+      select: {
+        puc: false,
+        insurance: false,
+      },
+    });
   }
 
   findOne(vehicleId: number) {

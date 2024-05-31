@@ -1,5 +1,5 @@
 export class UpdateVehicleDto {
-  readonly puc: string;
-  readonly insurance: string;
-  readonly ownerId: number;
+  readonly puc?: Buffer;
+  readonly insurance?: Buffer;
+  readonly ownerId?: number;
 }

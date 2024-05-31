@@ -9,22 +9,22 @@
 //   ownerId: number;
 // }
 
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Vehicles {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   vehicleNumber: number;
 
   @Column()
   vehicleType: string;
 
-  @Column()
-  puc: string;
+  @Column('mediumblob')
+  puc: Buffer;
+
+  @Column('mediumblob')
+  insurance: Buffer;
 
   @Column()
-  insurance: string;
-
-  @Column()
-  ownerId: number;
+  ownerId?: number;
 }

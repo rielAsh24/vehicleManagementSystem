@@ -2,15 +2,15 @@ CREATE TABLE drivers (
   id INT AUTO_INCREMENT,
   driverName VARCHAR(100) NOT NULL,
   phoneNumber VARCHAR(15) NOT NULL,
-  profilePhoto VARCHAR(100) NOT NULL,
+  profilePhoto MEDIUMBLOB NOT NULL,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE vehicles (
   vehicleNumber INT,
   vehicleType VARCHAR(20),
-  puc VARCHAR(100) NOT NULL,
-  insurance VARCHAR(100) NOT NULL,
+  puc MEDIUMBLOB NOT NULL,
+  insurance MEDIUMBLOB NOT NULL,
   ownerId INT,
   PRIMARY KEY (vehicleNumber),
   FOREIGN KEY (ownerId) REFERENCES drivers(id)

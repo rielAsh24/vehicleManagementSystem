@@ -13,8 +13,12 @@ export class DriverService {
     private driverRepository: Repository<Drivers>,
   ) {}
 
-  create(newDriver: CreateDriverDto) {
-    return this.driverRepository.insert(newDriver);
+  createDriver(newDriver: CreateDriverDto) {
+    return this.driverRepository.insert({
+      driverName: newDriver.driverName,
+      phoneNumber: newDriver.phoneNumber,
+      profilePhoto: newDriver.profilePhoto,
+    });
   }
 
   findAll() {

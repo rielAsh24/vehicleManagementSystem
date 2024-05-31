@@ -13,7 +13,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Drivers {
   @PrimaryGeneratedColumn()
-  id: number;
+  id?: number;
 
   @Column()
   driverName: string;
@@ -21,6 +21,6 @@ export class Drivers {
   @Column()
   phoneNumber: string;
 
-  @Column()
-  profilePhoto: string;
+  @Column('mediumblob')
+  profilePhoto: Buffer;
 }

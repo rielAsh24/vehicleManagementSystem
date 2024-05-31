@@ -12,10 +12,12 @@ const driverSchema = z.object({
 });
 
 // TYPES
+type driverSchemaType = z.infer<typeof driverSchema>;
+
 type driverData = {
   driverName: string;
   phoneNumber: string;
 };
 
 export { driverSchema };
-export type { driverData };
+export type { driverData, driverSchemaType };

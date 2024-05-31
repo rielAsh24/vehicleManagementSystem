@@ -11,6 +11,8 @@ const vehicleSchema = z.object({
 });
 
 // TYPES
+type vehicleSchemaType = z.infer<typeof vehicleSchema>;
+
 type vehicleData = {
   vehicleNumber: number;
   vehicleType: string;
@@ -18,4 +20,4 @@ type vehicleData = {
 };
 
 export { vehicleSchema };
-export type { vehicleData };
+export type { vehicleData, vehicleSchemaType };

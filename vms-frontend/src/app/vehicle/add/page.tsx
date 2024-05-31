@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AddVehicle from "@/components/define/AddVehicle";
 
-export default function Apply() {
+export default function Vehicle() {
   return (
     <section className="flex w-full items-center justify-center">
       <Card>

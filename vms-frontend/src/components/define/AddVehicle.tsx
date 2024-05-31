@@ -13,23 +13,23 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
 
-import { vehicleData, vehicleSchema } from "@/lib/vehicle.dto";
+import { vehicleSchema, vehicleSchemaType } from "@/lib/vehicle.dto";
 
 export default function AddVehicle() {
   const { pending } = useFormStatus();
 
-  const form = useForm<vehicleData>({
+  const form = useForm<vehicleSchemaType>({
     resolver: zodResolver(vehicleSchema),
     defaultValues: {
       vehicleNumber: 0,
       vehicleType: "",
       puc: "",
-      insurance: ""
-    }
+      insurance: "",
+    },
   });
 
   return (

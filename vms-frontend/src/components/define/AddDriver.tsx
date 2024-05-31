@@ -13,22 +13,22 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
 
-import { driverData, driverSchema } from "@/lib/driver.dto";
+import { driverSchemaType, driverSchema } from "@/lib/driver.dto";
 
 export default function AddDriver() {
   const { pending } = useFormStatus();
 
-  const form = useForm<driverData>({
+  const form = useForm<driverSchemaType>({
     resolver: zodResolver(driverSchema),
     defaultValues: {
       driverName: "",
       phoneNumber: "",
-      profilePhoto: ""
-    }
+      profilePhoto: "",
+    },
   });
 
   return (

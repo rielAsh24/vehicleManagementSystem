@@ -20,8 +20,9 @@ export class VehicleService {
   findAll() {
     return this.VehicleRepository.find({
       select: {
-        puc: false,
-        insurance: false,
+        vehicleNumber: true,
+        vehicleType: true,
+        ownerId: true,
       },
     });
   }

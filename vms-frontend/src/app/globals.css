@@ -47,6 +47,13 @@
     --input: 12 6.5% 15.1%;
     --ring: 20.5 90.2% 48.2%;
   }
+
+  body {
+    @apply flex flex-col overflow-y-scroll bg-background text-base text-foreground;
+  }
+  article {
+    @apply flex grow items-center justify-center sm:container max-sm:px-4;
+  }
 }
 
 @layer utilities {

@@ -24,8 +24,8 @@ export class DriverService {
   findAll() {
     return this.driverRepository.find({
       select: {
-        id: false,
-        profilePhoto: false,
+        driverName: true,
+        phoneNumber: true,
       },
     });
   }

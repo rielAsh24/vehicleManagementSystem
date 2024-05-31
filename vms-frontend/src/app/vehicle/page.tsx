@@ -1,17 +1,39 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import AddVehicle from "@/components/define/AddVehicle";
+import { getAll } from "@/actions/vehicle";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { vehicleData } from "@/lib/vehicle.dto";
 
-export default function Apply() {
+export default async function VehiclesList() {
+  const vehicles: vehicleData[] = await getAll();
+
   return (
-    <section className="flex w-full items-center justify-center">
-      <Card>
-        <CardHeader className="pb-4">
-          <CardTitle>Add A Vehicle</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <AddVehicle />
-        </CardContent>
-      </Card>
+    <section className="flex w-full justify-center">
+      <Table className="lg:max-w-xl">
+        <TableCaption>List of Vehicles in Record</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="">Vehicle Number</TableHead>
+            <TableHead>Vehicle Type</TableHead>
+            <TableHead>Owner</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {vehicles.map((v: vehicleData) => (
+            <TableRow key={v.vehicleNumber}>
+              <TableCell className="font-medium">{v.vehicleNumber}</TableCell>
+              <TableCell>{v.vehicleType}</TableCell>
+              <TableCell>{v.ownerId === null ? "None" : v.ownerId}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </section>
   );
 }

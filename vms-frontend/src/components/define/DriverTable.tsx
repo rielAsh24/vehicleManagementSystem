@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table";
 import { driverData } from "@/lib/driver.dto";
 
-export default async function DriversList() {
+export async function DriversList() {
   const drivers: driverData[] = await getAll();
 
   return (

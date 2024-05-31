@@ -3,7 +3,7 @@
 async function postVehicle(newVehicle: FormData) {
   const response = await fetch(`${process.env.API}/vehicle`, {
     method: "POST",
-    body: newVehicle
+    body: newVehicle,
   });
   if (!response.ok) {
     // throw new Error("Failed to post vehicle");
@@ -14,14 +14,13 @@ async function postVehicle(newVehicle: FormData) {
 
 async function getAll() {
   const response = await fetch(`${process.env.API}/vehicle`, {
-    method: "GET"
+    method: "GET",
   });
   if (!response.ok) {
     // throw new Error("Failed to post vehicle");
     console.error(response.status);
   }
   const res = await response.json();
-  console.log(res);
   return res;
 }
 

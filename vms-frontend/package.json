@@ -1,10 +1,12 @@
 {
   "name": "vms-frontend",
   "version": "0.1.0",
-  "private": true,
+  "license": "Apache-2.0",
+  "author": "rielAsh24",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "format": "prettier --write \"src/**/*.ts\"",
     "start": "next start",
     "lint": "next lint"
   },

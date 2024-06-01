@@ -23,19 +23,6 @@ $ pnpm start:dev
 $ pnpm start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ pnpm test
-
-# e2e tests
-$ pnpm test:e2e
-
-# test coverage
-$ pnpm test:cov
-```
-
 ## Stay in touch
 
 - Author - [Ashriel Waghmare](https://rielash24.github.io/)

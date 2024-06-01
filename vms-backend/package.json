@@ -1,10 +1,8 @@
 {
   "name": "vms-backend",
   "version": "0.0.1",
-  "description": "",
   "author": "rielAsh24",
-  "private": true,
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "nest build",
     "db:up": "cd src/data && docker compose up -d",

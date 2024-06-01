@@ -15,6 +15,7 @@ const driverSchema = z.object({
 type driverSchemaType = z.infer<typeof driverSchema>;
 
 type driverData = {
+  id: number;
   driverName: string;
   phoneNumber: string;
 };

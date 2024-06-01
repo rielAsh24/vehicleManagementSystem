@@ -6,11 +6,22 @@ A vehicle management system to manage a catalog of drivers and vehicles. The pro
 
 ## Project Structure
 
-vms-backend: Nest.js and MySQL backend
+vms-backend: `Nest.js` and `MySQL` backend; `TypeORM` for integration
+
+vms-frontend: `Next.js`
 
 ## Future Scope
 
-In future, I plan to add the flexibility enough to handle transfers to other entities in the future.
+The future of this project can add serveral features for convinience and expansion of the systems capabilities to facilitate transfers to entities other than drivers. Below is the list of changes I have planned:
+
+1. Easy vehicle transfer
+   Facilitating transfers currently requires only 2 fields: vehicle number and new owner ID. I plan to add interactions which can allow transferring vehicles from the `/vehicles` page itself.
+
+2. Adding Ownership to vehicles
+   Adding vehicles to the system currently doesn't need an owner. And in order to accomodate for future changes, I added the `ownerId` field to the `Vehicles` entity, allowing easier tracking. To make things more intuitive, I wish to add a buttom to cars with no owners, allowing quick ownership transfer.
+
+3. Entities beyond drivers
+   Entities beyond drivers could be companies, businesses, etc. who wish to own cars. For this, I devised a plan to modify the entities to accomodate additional features. For instance, the `Drivers` entity could be modified to include information such as them being an invidiual or a business. As I have already added vehicle ownership information in brief, it provides some flexibility for expansion.
 
 ## Stay in touch
 
@@ -18,4 +29,4 @@ In future, I plan to add the flexibility enough to handle transfers to other ent
 
 ## License
 
-This project is [MIT licensed](LICENSE).
+This project is [Apache 2.0 licensed](LICENSE).

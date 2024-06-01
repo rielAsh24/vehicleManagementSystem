@@ -11,7 +11,7 @@ import {
   NavigationMenuLink,
   NavigationMenuViewport,
   NavigationMenuContent,
-} from "../ui/navigation-menu";
+} from "@/components/ui/navigation-menu";
 import {
   Popover,
   PopoverContent,
@@ -71,7 +71,6 @@ function NavigationLink({
 }
 
 export {
-  // NavLogo,
   NavigationLink,
   NavigationMenu,
   NavigationMenuContent,

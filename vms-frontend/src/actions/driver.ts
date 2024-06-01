@@ -9,17 +9,15 @@ async function postDriver(newDriver: FormData) {
     throw new Error("Failed to post driver");
   }
   return response.status;
-  // const res = await response.json();
-  // console.log(res);
 }
 
 async function getAll() {
   const response = await fetch(`${process.env.API}/driver`, {
     method: "GET",
+    cache: "no-store",
   });
   if (!response.ok) {
-    // throw new Error("Failed to post vehicle");
-    console.error(response.status);
+    throw new Error("Failed to post vehicle");
   }
   const res = await response.json();
   return res;

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import AddVehicle from "@/components/define/AddVehicle";
+import AddVehicle from "./add-form";
 
 export default function Vehicle() {
   return (

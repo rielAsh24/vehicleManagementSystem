@@ -2,38 +2,38 @@
 
 ## Description
 
-Vehicle management system's backend including API and Database setup. The portion handles the requests from the frontend using `Nest.js` and stores it in a `MySQL` backend. Additionally for perfomance, it employs the `bun.js` runtime
+Vehicle management system's backend including API and Database setup. The portion handles the requests from the frontend using `Nest.js` and stores it in a `MySQL` backend.
 
 ## Installation
 
 ```bash
-$ bun install
+$ pnpm install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ bun start
+$ pnpm start
 
 # watch mode
-$ bun start:dev
+$ pnpm start:dev
 
 # production mode
-$ bun start:prod
+$ pnpm start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ bun test
+$ pnpm test
 
 # e2e tests
-$ bun test:e2e
+$ pnpm test:e2e
 
 # test coverage
-$ bun test:cov
+$ pnpm test:cov
 ```
 
 ## Stay in touch
@@ -42,4 +42,4 @@ $ bun test:cov
 
 ## License
 
-This project is [MIT licensed](LICENSE).
+This project is [Apache 2.0 licensed](LICENSE).

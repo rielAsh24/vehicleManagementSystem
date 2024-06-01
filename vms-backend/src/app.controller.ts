@@ -22,6 +22,8 @@ export class AppController {
     const vehicle = await this.vehicleService.findOne(transferData.vid);
     const toDriver = await this.driverService.findOne(transferData.to);
 
+    this.vehicleService.update(vehicle.vehicleNumber, { ownerId: toDriver.id });
+
     return this.transferService.create({
       v_num: vehicle.vehicleNumber,
       fromOwner: vehicle.ownerId,

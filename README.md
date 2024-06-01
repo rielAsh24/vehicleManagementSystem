@@ -23,6 +23,9 @@ The future of this project can add serveral features for convinience and expansi
 3. Entities beyond drivers
    Entities beyond drivers could be companies, businesses, etc. who wish to own cars. For this, I devised a plan to modify the entities to accomodate additional features. For instance, the `Drivers` entity could be modified to include information such as them being an invidiual or a business. As I have already added vehicle ownership information in brief, it provides some flexibility for expansion.
 
+4. Removing Entities
+   `Vehicles` and `Transfers` are inter-dependent on each other and hence the constraints to delete are convoluted. While requiring importing services in each controller, it results in circular dependencies and requires a fine grain approach.
+
 ## Stay in touch
 
 - Author - [Ashriel Waghmare](https://rielash24.github.io/)

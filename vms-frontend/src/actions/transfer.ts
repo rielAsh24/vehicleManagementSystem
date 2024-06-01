@@ -1,20 +1,27 @@
 "use server";
 
+import { transferSchema } from "@/lib/transfer.dto";
+
 async function postTransfer(newTransfer: FormData) {
-  const response = await fetch(process.env.API!, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      vid: newTransfer.get("vid"),
-      to: newTransfer.get("to"),
-    }),
-  });
-  if (!response.ok) {
-    throw new Error("Failed to post transfer");
+  const parsing = transferSchema.safeParse(Object.fromEntries(newTransfer));
+
+  if (!parsing.success) throw parsing.error;
+  else {
+    const response = await fetch(`${process.env.API}/transfer`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        vid: newTransfer.get("vid"),
+        to: newTransfer.get("to"),
+      }),
+    });
+    if (!response.ok) {
+      throw new Error("Failed to post transfer");
+    }
+    return response.status;
   }
-  return response.status;
 }
 
 async function getAll() {

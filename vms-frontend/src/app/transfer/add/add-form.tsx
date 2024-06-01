@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -44,6 +45,7 @@ export default function AddTransfer() {
               <FormControl>
                 <Input type="number" placeholder="Jay Dev" {...field} />
               </FormControl>
+              <FormDescription>Must be atleast 4 digits.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -57,6 +59,7 @@ export default function AddTransfer() {
               <FormControl>
                 <Input type="number" placeholder="Select Type" {...field} />
               </FormControl>
+              <FormDescription>Enter the ID of New Owner</FormDescription>
               <FormMessage />
             </FormItem>
           )}

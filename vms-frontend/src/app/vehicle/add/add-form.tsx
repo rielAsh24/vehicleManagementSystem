@@ -18,6 +18,13 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { vehicleSchema, vehicleSchemaType } from "@/lib/vehicle.dto";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function AddVehicle() {
   const { pending } = useFormStatus();
@@ -57,9 +64,20 @@ export default function AddVehicle() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Vehicle Type</FormLabel>
-              <FormControl>
-                <Input placeholder="Select Type" {...field} />
-              </FormControl>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  {/* <Input placeholder="Select Type" {...field} /> */}
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select Vehicle Type" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="compact">Compact</SelectItem>
+                  <SelectItem value="sedan">Sedan</SelectItem>
+                  <SelectItem value="bike">Bike</SelectItem>
+                  <SelectItem value="truck">Truck</SelectItem>
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}
@@ -69,11 +87,11 @@ export default function AddVehicle() {
           name="puc"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Add PUC</FormLabel>
+              <FormLabel>PUC Certificate (PDF)</FormLabel>
               <FormControl>
                 <Input type="file" {...field} />
               </FormControl>
-              <FormDescription></FormDescription>
+              <FormDescription>PDF File Size Limit: 1MB</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -83,11 +101,11 @@ export default function AddVehicle() {
           name="insurance"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Add Vehicle Insurance</FormLabel>
+              <FormLabel>Vehicle Insurance (PDF)</FormLabel>
               <FormControl>
                 <Input type="file" {...field} />
               </FormControl>
-              <FormDescription></FormDescription>
+              <FormDescription>PDF File Size Limit: 1MB</FormDescription>
               <FormMessage />
             </FormItem>
           )}

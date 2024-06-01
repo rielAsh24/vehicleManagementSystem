@@ -1,14 +1,21 @@
 "use server";
 
+import { driverSchema } from "@/lib/driver.dto";
+
 async function postDriver(newDriver: FormData) {
-  const response = await fetch(`${process.env.API}/driver`, {
-    method: "POST",
-    body: newDriver,
-  });
-  if (!response.ok) {
-    throw new Error("Failed to post driver");
+  const parsing = driverSchema.safeParse(Object.fromEntries(newDriver));
+
+  if (!parsing.success) throw parsing.error;
+  else {
+    const response = await fetch(`${process.env.API}/driver`, {
+      method: "POST",
+      body: newDriver,
+    });
+    if (!response.ok) {
+      throw new Error("Failed to post driver");
+    }
+    return response.status;
   }
-  return response.status;
 }
 
 async function getAll() {

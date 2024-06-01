@@ -1,4 +1,9 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Controller,
+  // Delete,
+  Get,
+  // Param
+} from '@nestjs/common';
 
 import { DriverService } from './driver/driver.service';
 import { VehicleService } from './vehicle/vehicle.service';
@@ -17,18 +22,10 @@ export class AppController {
     return 'Hello to Vehicle Management';
   }
 
-  @Post()
-  async transferVehicle(@Body() transferData: { vid: number; to: number }) {
-    const vehicle = await this.vehicleService.findOne(transferData.vid);
-    const toDriver = await this.driverService.findOne(transferData.to);
-
-    this.vehicleService.update(vehicle.vehicleNumber, { ownerId: toDriver.id });
-
-    return this.transferService.create({
-      v_num: vehicle.vehicleNumber,
-      fromOwner: vehicle.ownerId,
-      toOwner: toDriver.id,
-      t_date: new Date().toISOString().split('T')[0],
-    });
-  }
+  // @Delete(':id')
+  // async deleteVehicle(@Param('id') id: string) {
+  //   this.vehicleService.update(+id, { ownerId: null });
+  //   this.transferService.remove(+id);
+  //   return this.vehicleService.remove(+id);
+  // }
 }

@@ -41,6 +41,8 @@ export class VehicleService {
   }
 
   remove(id: number) {
-    return this.VehicleRepository.delete(+id);
+    return this.VehicleRepository.delete({
+      vehicleNumber: id,
+    });
   }
 }

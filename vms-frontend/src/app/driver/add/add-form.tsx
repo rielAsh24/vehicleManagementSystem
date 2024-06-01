@@ -18,9 +18,11 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { driverSchemaType, driverSchema } from "@/lib/driver.dto";
+// import { useState } from "react";
 
 export default function AddDriver() {
   const { pending } = useFormStatus();
+  // const [invalid, setInvalid] = useState<boolean>(false);
 
   const form = useForm<driverSchemaType>({
     resolver: zodResolver(driverSchema),
@@ -31,10 +33,21 @@ export default function AddDriver() {
     },
   });
 
+  // const handleOnSubmit = (values: driverSchemaType) => {
+  //   postDriver(values)
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
   return (
     <Form {...form}>
       <form
         action={postDriver}
+        // onSubmit={form.handleSubmit(handleOnSubmit)}
         className="grid w-[400px] grid-flow-row items-center gap-y-4"
       >
         <FormField
@@ -46,6 +59,7 @@ export default function AddDriver() {
               <FormControl>
                 <Input placeholder="Jay Dev" {...field} />
               </FormControl>
+              <FormDescription>Please enter the full name.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -72,7 +86,7 @@ export default function AddDriver() {
               <FormControl>
                 <Input type="file" {...field} />
               </FormControl>
-              <FormDescription></FormDescription>
+              <FormDescription>File Size Limit: 1MB</FormDescription>
               <FormMessage />
             </FormItem>
           )}

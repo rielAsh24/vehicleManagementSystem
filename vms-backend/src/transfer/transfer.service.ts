@@ -39,7 +39,7 @@ export class TransferService {
   //   return `This action updates a #${id} transfer`;
   // }
 
-  // remove(id: number) {
-  //   return `This action removes a #${id} transfer`;
-  // }
+  remove(vehicleId: number) {
+    return this.transferRepository.delete({ v_num: vehicleId });
+  }
 }

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { DriverController } from './driver.controller';
-import { DriverService } from './driver.service';
+import { DriverProvider } from './driver-provider';
 
 describe('DriverController', () => {
   let controller: DriverController;
@@ -8,7 +8,7 @@ describe('DriverController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [DriverController],
-      providers: [DriverService],
+      providers: [...DriverProvider],
     }).compile();
 
     controller = module.get<DriverController>(DriverController);

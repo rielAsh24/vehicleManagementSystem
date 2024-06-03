@@ -5,8 +5,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "build": "nest build",
-    "db:up": "cd src/data && docker compose up -d",
-    "db:down": "cd src/data && docker compose down && docker volume rm data_vmsdb",
+    "db:up": "cd data && docker compose up -d",
+    "db:down": "cd data && docker compose down && docker volume rm data_vmsdb",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

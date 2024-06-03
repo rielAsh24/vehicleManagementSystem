@@ -5,15 +5,22 @@
 Vehicle management system's frontend utilizes `Next.js` to provide a feature reach UI.
 Each module in the system has been dedicated a page for viewing and adding entities to the system.
 
-## Getting Started
+## Pre-requisites
 
-First, run the development server:
+You need to setup environment variables for the web application.
+Use the `.env.example` and enter your desired values
+
+Note: The API value must match the one set in `vms-backend`
+
+## Running the application
+
+1. Run the development server:
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the results.
+2. Open [http://localhost:3000](http://localhost:3000) with your browser to see the results.
 
 ## Navigation
 

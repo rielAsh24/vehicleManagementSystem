@@ -9,8 +9,8 @@ import {
 } from '@nestjs/common';
 
 import { TransferService } from './transfer.service';
-import { DriverService } from 'src/driver/driver.service';
-import { VehicleService } from 'src/vehicle/vehicle.service';
+import { DriverService } from '../driver/driver.service';
+import { VehicleService } from '../vehicle/vehicle.service';
 
 @Controller('transfer')
 export class TransferController {

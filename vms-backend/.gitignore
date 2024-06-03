@@ -41,7 +41,7 @@ coverage
 .env.test.local
 .env.production.local
 .env.local
-src/data/docker.env
+data/docker.env
 
 # temp directory
 .temp

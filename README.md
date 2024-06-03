@@ -6,7 +6,7 @@ A vehicle management system to manage a catalog of drivers and vehicles. The pro
 
 ## Project Structure
 
-vms-backend: `Nest.js` and `MySQL` backend; `TypeORM` for integration
+vms-backend: `Nest.js` and `MySQL` (Docker Setup) backend; `TypeORM` for integration
 
 vms-frontend: `Next.js`
 
